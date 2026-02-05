@@ -6,219 +6,110 @@
 <title>Ek Paul Shikshanasaathi</title>
 
 <style>
-
-/* RESET */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: system-ui, Arial, sans-serif;
-}
-
-body{
-  background:#f7f9f8;
-  color:#222;
-  line-height:1.6;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
+body{background:#f5f7f6;color:#222}
 
 /* HEADER */
 .header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 40px;
-  background:#0f6c3f;
-  color:#fff;
+display:flex;justify-content:space-between;align-items:center;
+padding:18px 40px;background:#0f6c3f;color:white;
 }
+.logo{font-weight:bold;font-size:20px}
+.nav a{color:white;margin-left:20px;text-decoration:none;cursor:pointer}
+.donate-btn{background:#ffd54f;color:black;padding:8px 14px;border-radius:6px}
 
-.logo{
-  font-size:20px;
-  font-weight:bold;
-}
-
-.nav a{
-  margin-left:18px;
-  text-decoration:none;
-  color:white;
-  font-weight:500;
-}
-
-.donate-btn{
-  background:#ffd54f;
-  color:#000;
-  padding:8px 14px;
-  border-radius:6px;
-}
+/* PAGES */
+.page{display:none;padding:60px 20px;text-align:center}
+.active{display:block}
 
 /* HERO */
 .hero{
-  height:85vh;
-  background:linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
-  url("https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=1200") center/cover no-repeat;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  color:white;
+height:80vh;color:white;display:flex;align-items:center;justify-content:center;text-align:center;
+background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+url("https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=1200") center/cover;
 }
+.main-btn{background:#ffd54f;color:black;padding:12px 26px;border-radius:8px;text-decoration:none}
 
-.hero h1{
-  font-size:42px;
-  margin-bottom:15px;
-}
+/* CARDS */
+.card{background:white;margin:20px auto;padding:25px;max-width:320px;border-radius:12px;box-shadow:0 5px 18px rgba(0,0,0,.1)}
 
-.hero p{
-  max-width:600px;
-  margin:auto;
-  margin-bottom:20px;
-}
-
-.main-btn{
-  background:#ffd54f;
-  color:black;
-  padding:12px 28px;
-  text-decoration:none;
-  border-radius:8px;
-  font-weight:bold;
-}
-
-/* ABOUT */
-.about-short{
-  padding:70px 20px;
-  text-align:center;
-  background:white;
-}
-
-.secondary-btn{
-  display:inline-block;
-  margin-top:15px;
-  padding:10px 20px;
-  border:2px solid #0f6c3f;
-  color:#0f6c3f;
-  text-decoration:none;
-  border-radius:6px;
-}
-
-/* SERVICES */
-.services{
-  padding:70px 20px;
-  text-align:center;
-}
-
-.service-box{
-  background:white;
-  padding:25px;
-  margin:20px auto;
-  max-width:320px;
-  border-radius:12px;
-  box-shadow:0 5px 18px rgba(0,0,0,0.08);
-}
-
-/* IMPACT */
-.impact{
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  padding:70px 20px;
-  background:#eef4f1;
-}
-
-.impact-box{
-  text-align:center;
-}
-
-.impact-box h3{
-  font-size:36px;
-  color:#0f6c3f;
-}
-
-/* DONATION HELP */
-.donation-help{
-  padding:70px 20px;
-  text-align:center;
-  background:white;
-}
-
-.donation-help li{
-  margin:10px 0;
-  font-size:18px;
-  list-style:none;
-}
-
-/* CTA */
-.cta{
-  background:#0f6c3f;
-  color:white;
-  text-align:center;
-  padding:70px 20px;
-}
+/* GALLERY */
+.gallery img{width:260px;border-radius:12px;margin:10px}
 
 /* FOOTER */
-.footer{
-  background:#111;
-  color:#ddd;
-  text-align:center;
-  padding:25px;
-  font-size:14px;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  .hero h1{font-size:28px;}
-  .impact{flex-direction:column;}
-}
-
+.footer{background:#111;color:#ddd;text-align:center;padding:20px;margin-top:40px}
 </style>
 </head>
 
 <body>
 
 <header class="header">
-  <div class="logo">Ek Paul Shikshanasaathi</div>
-  <nav class="nav">
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#" class="donate-btn">Donate</a>
-    <a href="#">Contact</a>
-  </nav>
+<div class="logo">Ek Paul Shikshanasaathi</div>
+<nav class="nav">
+<a onclick="showPage('home')">Home</a>
+<a onclick="showPage('about')">About</a>
+<a onclick="showPage('gallery')">Gallery</a>
+<a onclick="showPage('contact')">Contact</a>
+<a onclick="showPage('donate')" class="donate-btn">Donate</a>
+</nav>
 </header>
 
-<section class="hero">
-  <div>
-    <h1>Ek Paul Shikshanasaathi</h1>
-    <p>तुमचं एक छोटंसं पाऊल, एखाद्या मुलाचं संपूर्ण भविष्य घडवू शकतं.</p>
-    <a href="#" class="main-btn">Donate Now</a>
-  </div>
+<!-- HOME -->
+<section id="home" class="page active">
+<div class="hero">
+<div>
+<h1>Ek Paul Shikshanasaathi</h1>
+<p>तुमचं एक छोटंसं पाऊल, एखाद्या मुलाचं संपूर्ण भविष्य घडवू शकतं.</p>
+<br>
+<a onclick="showPage('donate')" class="main-btn">Donate Now</a>
+</div>
+</div>
 </section>
 
-<section class="about-short">
-  <h2>About The Initiative</h2>
-  <p>गरिब मुलांना शिक्षणाची मदत देण्याचा सामाजिक उपक्रम.</p>
-  <a href="#" class="secondary-btn">Read More</a>
+<!-- ABOUT -->
+<section id="about" class="page">
+<h2>About Us</h2>
+<p>Yashasvi Foundation अंतर्गत हा उपक्रम गरिब विद्यार्थ्यांना शिक्षण मदत देण्यासाठी आहे.</p>
+<div class="card">शैक्षणिक साहित्य</div>
+<div class="card">फी सहाय्य</div>
+<div class="card">पूर्ण शिक्षण समर्थन</div>
 </section>
 
-<section class="services">
-  <h2>What We Do</h2>
-  <div class="service-box">शैक्षणिक साहित्य</div>
-  <div class="service-box">फी सहाय्य</div>
-  <div class="service-box">पूर्ण शिक्षण समर्थन</div>
+<!-- GALLERY -->
+<section id="gallery" class="page gallery">
+<h2>Our Work</h2>
+<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800">
+<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800">
+<img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=800">
 </section>
 
-<section class="impact">
-  <div class="impact-box"><h3>50+</h3><p>Students</p></div>
-  <div class="impact-box"><h3>200+</h3><p>Books</p></div>
-  <div class="impact-box"><h3>10+</h3><p>Schools</p></div>
+<!-- CONTACT -->
+<section id="contact" class="page">
+<h2>Contact</h2>
+<p>Yashasvi Foundation</p>
+<p>Pankaj Gunjal & Gitesh Ahire</p>
+<p>Email: example@gmail.com</p>
 </section>
 
-<section class="cta">
-  <h2>आजच एक पाऊल टाका</h2>
-  <p>Support a child's education</p>
+<!-- DONATE -->
+<section id="donate" class="page">
+<h2>Support Education</h2>
+<p>UPI द्वारे मदत करा</p>
+<br>
+<a href="upi://pay?pa=YOURUPI@upi&pn=Yashasvi%20Foundation&cu=INR" class="main-btn">Pay via UPI</a>
 </section>
 
 <footer class="footer">
-  <p>Yashasvi Foundation</p>
-  <p>Founders: Pankaj Gunjal & Gitesh Ahire</p>
+<p>© Yashasvi Foundation</p>
 </footer>
+
+<script>
+function showPage(id){
+document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+document.getElementById(id).classList.add("active");
+window.scrollTo(0,0);
+}
+</script>
 
 </body>
 </html>
