@@ -1,115 +1,44 @@
 <!DOCTYPE html>
 <html lang="mr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ek Paul Shikshanasaathi</title>
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
-body{background:#f5f7f6;color:#222}
-
-/* HEADER */
-.header{
-display:flex;justify-content:space-between;align-items:center;
-padding:18px 40px;background:#0f6c3f;color:white;
-}
-.logo{font-weight:bold;font-size:20px}
-.nav a{color:white;margin-left:20px;text-decoration:none;cursor:pointer}
-.donate-btn{background:#ffd54f;color:black;padding:8px 14px;border-radius:6px}
-
-/* PAGES */
-.page{display:none;padding:60px 20px;text-align:center}
-.active{display:block}
-
-/* HERO */
-.hero{
-height:80vh;color:white;display:flex;align-items:center;justify-content:center;text-align:center;
-background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
-url("https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=1200") center/cover;
-}
-.main-btn{background:#ffd54f;color:black;padding:12px 26px;border-radius:8px;text-decoration:none}
-
-/* CARDS */
-.card{background:white;margin:20px auto;padding:25px;max-width:320px;border-radius:12px;box-shadow:0 5px 18px rgba(0,0,0,.1)}
-
-/* GALLERY */
-.gallery img{width:260px;border-radius:12px;margin:10px}
-
-/* FOOTER */
-.footer{background:#111;color:#ddd;text-align:center;padding:20px;margin-top:40px}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>एक पाऊल शिक्षणासाठी</title>
+  <style>
+    body { margin:0; font-family:Arial, Helvetica, sans-serif; background:#f5f7fb; color:#333; }
+    header { background:#1e3a8a; color:white; padding:40px 20px; text-align:center; font-size:2.5rem; font-weight:bold; }
+    nav { background:#162d6b; padding:10px; text-align:center; }
+    nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; }
+    nav a:hover { text-decoration:underline; }
+    .container { max-width:1000px; margin:auto; padding:20px; }
+    .card { background:white; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:20px; }
+    .btn { display:inline-block; background:#2563eb; color:white; padding:12px 18px; border-radius:8px; text-decoration:none; margin-top:10px; }
+    footer { background:#1e3a8a; color:white; text-align:center; padding:15px; margin-top:30px; }
+  </style>
 </head>
-
 <body>
 
-<header class="header">
-<div class="logo">Ek Paul Shikshanasaathi</div>
-<nav class="nav">
-<a onclick="showPage('home')">Home</a>
-<a onclick="showPage('about')">About</a>
-<a onclick="showPage('gallery')">Gallery</a>
-<a onclick="showPage('contact')">Contact</a>
-<a onclick="showPage('donate')" class="donate-btn">Donate</a>
-</nav>
-</header>
+  <header>एक पाऊल शिक्षणासाठी</header>
 
-<!-- HOME -->
-<section id="home" class="page active">
-<div class="hero">
-<div>
-<h1>Ek Paul Shikshanasaathi</h1>
-<p>तुमचं एक छोटंसं पाऊल, एखाद्या मुलाचं संपूर्ण भविष्य घडवू शकतं.</p>
-<br>
-<a onclick="showPage('donate')" class="main-btn">Donate Now</a>
-</div>
-</div>
-</section>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="whatwedo.html">What We Do</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-<!-- ABOUT -->
-<section id="about" class="page">
-<h2>About Us</h2>
-<p>Yashasvi Foundation अंतर्गत हा उपक्रम गरिब विद्यार्थ्यांना शिक्षण मदत देण्यासाठी आहे.</p>
-<div class="card">शैक्षणिक साहित्य</div>
-<div class="card">फी सहाय्य</div>
-<div class="card">पूर्ण शिक्षण समर्थन</div>
-</section>
+  <div class="container">
+    <section class="card">
+      <h2>Welcome to Yashasvi Foundation</h2>
+      <p>Yashasvi Foundation ही शिक्षणासाठी काम करणारी संस्था आहे. आमचा उद्देश गरजू विद्यार्थ्यांना शिक्षणाची संधी उपलब्ध करणे आहे.</p>
+      <a class="btn" href="about.html">Learn More</a>
+    </section>
+  </div>
 
-<!-- GALLERY -->
-<section id="gallery" class="page gallery">
-<h2>Our Work</h2>
-<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800">
-<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800">
-<img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=800">
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="page">
-<h2>Contact</h2>
-<p>Yashasvi Foundation</p>
-<p>Pankaj Gunjal & Gitesh Ahire</p>
-<p>Email: example@gmail.com</p>
-</section>
-
-<!-- DONATE -->
-<section id="donate" class="page">
-<h2>Support Education</h2>
-<p>UPI द्वारे मदत करा</p>
-<br>
-<a href="upi://pay?pa=YOURUPI@upi&pn=Yashasvi%20Foundation&cu=INR" class="main-btn">Pay via UPI</a>
-</section>
-
-<footer class="footer">
-<p>© Yashasvi Foundation</p>
-</footer>
-
-<script>
-function showPage(id){
-document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
-document.getElementById(id).classList.add("active");
-window.scrollTo(0,0);
-}
-</script>
+  <footer>
+    <p>© 2026 Yashasvi Foundation. सर्व हक्क राखीव.</p>
+  </footer>
 
 </body>
 </html>
