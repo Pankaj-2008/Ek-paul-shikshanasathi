@@ -4,7 +4,33 @@
     <title>About Us</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<script>
+    const faders = document.querySelectorAll(".fade-in");
+
+    const appearOptions = {
+        threshold: 0.3
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(
+        entries,
+        appearOnScroll
+    ) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.classList.add("show");
+                appearOnScroll.unobserve(entry.target);
+            }
+        });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+    });
+</script>
+    
+    <body>
 
 <header class="simple-header">
     <h1>ABOUT US</h1>
