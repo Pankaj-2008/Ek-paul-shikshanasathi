@@ -1,51 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>About Us</title>
+    <meta charset="UTF-8">
+    <title>About Us | यशस्वी फाउंडेशन</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
-<script>
-    const faders = document.querySelectorAll(".fade-in");
+<body>
 
-    const appearOptions = {
-        threshold: 0.3
-    };
+<!-- ================= HEADER ================= -->
 
-    const appearOnScroll = new IntersectionObserver(function(
-        entries,
-        appearOnScroll
-    ) {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            } else {
-                entry.target.classList.add("show");
-                appearOnScroll.unobserve(entry.target);
-            }
-        });
-    }, appearOptions);
+<header>
+    <div class="logo">यशस्वी फाउंडेशन</div>
 
-    faders.forEach(fader => {
-        appearOnScroll.observe(fader);
-    });
-</script>
-    
-    <body>
-
-<header class="simple-header">
-    <h1>ABOUT US</h1>
+    <nav>
+        <ul class="nav-list">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="our-work.html">OUR WORK</a></li>
+            <li><a href="campaigns.html">CAMPAIGNS</a></li>
+            <li><a href="get-involved.html">GET INVOLVED</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
 </header>
 
-<section class="content fade-in">
-    <h2>Who We Are</h2>
-    <p>We are a non-profit organization working to uplift underprivileged communities.</p>
+<!-- ================= PAGE HEADER ================= -->
 
-    <h2>Our Vision</h2>
-    <p>To create equal opportunities for every woman and child.</p>
+<section class="simple-header">
+    <h1>About Us / आमच्याबद्दल</h1>
 </section>
 
+<!-- ================= ABOUT CONTENT ================= -->
+
+<section class="about-section">
+    <div class="about-container">
+
+        <h2>Who We Are / आम्ही कोण आहोत</h2>
+        <p>
+            YASHASVI Foundation is a non-profit organization working towards 
+            education, healthcare and women empowerment.
+            आम्ही समाजातील दुर्बल बालकांना समान संधी मिळाव्यात 
+            यासाठी कार्य करतो.
+        </p>
+
+        <h2>Our Vision / आमचे ध्येय</h2>
+        <p>
+            To create a society where every woman and child has access 
+            to education, healthcare and equal opportunities.
+             मुले स्वावलंबी व्हावेत हेच आमचे ध्येय आहे.
+        </p>
+
+        <h2>Our Mission / आमचे उद्दिष्ट</h2>
+        <p>
+            We conduct educational programs, health camps and skill development 
+            initiatives to uplift underprivileged communities.
+            समाजातील गरीब विद्यार्थ्यांना मदत करणे , त्यांना योग्य त्या सुविधा मिळाऊन देणे , त्यांना सक्षम बनविणे हे आमचे उद्दिष्ट आहे.
+        </p>
+
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
-    <p>© 2026 YASHASVI Foundation</p>
+    <p>© 2026 यशस्वी फाउंडेशन | All Rights Reserved</p>
 </footer>
 
 </body>
