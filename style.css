@@ -72,7 +72,46 @@ nav a {
         background-attachment: scroll;
     }
 }
+.hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+}
 
+.hero-text h2 {
+    font-size: 22px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #5cb85c;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+    background: #4cae4c;
+    transform: scale(1.05);
+}
 /* ================= HOME INFO SECTION ================= */
 
 .home-info {
