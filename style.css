@@ -177,3 +177,65 @@ nav a {
     line-height: 1.7;
     font-size: 18px;
 }
+/* ================= TEAM SECTION ================= */
+
+.team-section {
+    padding: 80px 100px;
+    text-align: center;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.team-card {
+    width: 220px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+}
+
+.team-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* ================= ACHIEVEMENTS ================= */
+
+.achievements {
+    padding: 80px 100px;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+.achievement-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.achievement {
+    background: white;
+    padding: 30px;
+    width: 200px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.achievement h3 {
+    font-size: 28px;
+    color: #5cb85c;
+}
