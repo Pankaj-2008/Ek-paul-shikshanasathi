@@ -79,35 +79,8 @@
 <!-- ================= JAVASCRIPT ================= -->
 
 <script>
-    /* Hamburger Menu */
-    const menu = document.getElementById("mobile-menu");
-    const navList = document.querySelector(".nav-list");
+document.addEventListener("DOMContentLoaded", function() {
 
-    menu.addEventListener("click", () => {
-        navList.classList.toggle("active");
-    });
-
-    /* Scroll Fade-in Animation */
-    const faders = document.querySelectorAll(".fade-in");
-
-    const appearOptions = {
-        threshold: 0.3
-    };
-
-    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-                observer.unobserve(entry.target);
-            }
-        });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-        appearOnScroll.observe(fader);
-    });
-
-    /* 🔥 Auto Changing Background Slider */
     const hero = document.querySelector(".hero");
 
     const images = [
@@ -116,18 +89,17 @@
         "images/hero3.jpg"
     ];
 
-    let index = 0;
+    let current = 0;
 
-    function changeBackground() {
-        index++;
-        if (index >= images.length) {
-            index = 0;
+    setInterval(function() {
+        current++;
+        if (current >= images.length) {
+            current = 0;
         }
-        hero.style.backgroundImage = `url('${images[index]}')`;
-    }
+        hero.style.backgroundImage = "url('" + images[current] + "')";
+    }, 4000);
 
-    setInterval(changeBackground, 4000);
+});
 </script>
-
 </body>
 </html>
