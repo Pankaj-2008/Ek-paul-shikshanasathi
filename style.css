@@ -35,15 +35,12 @@ nav a {
     cursor: pointer;
 }
 
-/* ================= HERO SECTION (FINAL CLEAN VERSION) ================= */
+/* ================= HERO SECTION CLEAN ================= */
 
 .hero {
     position: relative;
     height: 100vh;
-    background-image: url("hero1.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url('images/hero1.jpg') no-repeat center center/cover;
     background-attachment: fixed;
     display: flex;
     align-items: center;
@@ -53,160 +50,33 @@ nav a {
     transition: background-image 1s ease-in-out;
 }
 
-/* Dark overlay */
 .overlay {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.0);
+    background: rgba(0,0,0,0.3); /* medium darkness */
     top: 0;
     left: 0;
 }
 
-/* Keep text above overlay */
 .hero-text {
     position: relative;
     z-index: 2;
 }
 
-/* Mobile Fix */
 @media (max-width: 768px) {
     .hero {
         background-attachment: scroll;
     }
 }
 
-.hero-text h1 {
-    font-size: 55px;
-    font-weight: 900;
-}
+/* ================= HOME INFO SECTION ================= */
 
-.info, .content {
-    padding: 60px 100px;
-    text-align: center;
-}
-
-.card {
-    background: #f4f4f4;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-}
-
-.simple-header {
-    background: #5cb85c;
-    color: white;
-    padding: 40px;
-    text-align: center;
-}
-
-footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-/* Smooth Scroll */
-html {
-    scroll-behavior: smooth;
-}
-
-/* ===================== */
-/* FADE IN ANIMATION */
-/* ===================== */
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 1s ease;
-}
-
-.fade-in.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Hero Text Animation */
-.hero-text h2 {
-    animation: slideDown 1s ease forwards;
-}
-
-.hero-text h1 {
-    animation: slideUp 1.5s ease forwards;
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Card Hover Effect */
-
-.card {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 15px 25px rgba(0,0,0,0.15);
-}
-
-/* Button Hover Animation */
-
-.donate-btn {
-    transition: all 0.3s ease;
-}
-
-.donate-btn:hover {
-    transform: scale(1.05);
-}
-.hero {
-    position: relative;
-    height: 100vh;
-    background: url('images/hero1.jpg') no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    transition: background-image 1s ease-in-out;
-}
-
-/* Dark overlay for better text visibility */
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    top: 0;
-    left: 0;
-}
-
-.hero-text {
-    position: relative;
-    z-index: 2;
-}
 .home-info {
     padding: 80px 100px;
     background: #f9f9f9;
     text-align: center;
+    color: black;
 }
 
 .home-container h2 {
@@ -229,7 +99,7 @@ html {
 }
 
 .info-box {
-    background: black;
+    background: white;
     padding: 30px;
     width: 200px;
     border-radius: 12px;
@@ -244,8 +114,4 @@ html {
 .info-box h3 {
     font-size: 28px;
     color: #5cb85c;
-}
-//check//
-.home-info {
-    background: red;
 }
