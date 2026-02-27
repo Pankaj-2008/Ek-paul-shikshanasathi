@@ -134,7 +134,27 @@
 </footer>
 
 <script>
-   // slider code here
+   <script>
+    const hero = document.querySelector(".hero");
+
+    const images = [
+        "images/hero1.jpg",
+        "images/hero2.jpg",
+        "images/hero3.jpg"
+    ];
+
+    let index = 0;
+
+    function changeBackground() {
+        index++;
+        if (index >= images.length) {
+            index = 0;
+        }
+        hero.style.backgroundImage = `url('${images[index]}')`;
+    }
+
+    setInterval(changeBackground, 4000); // Change every 4 seconds
+</script>
 </script>
 </body>
 </html>
