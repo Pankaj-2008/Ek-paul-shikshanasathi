@@ -67,20 +67,22 @@
     <h2>Our Achievements / आमची यशस्वी कामगिरी</h2>
 
     <div class="achievement-boxes">
+
         <div class="achievement">
-            <h3>1000+</h3>
+            <h3 class="counter" data-target="1000">0</h3>
             <p>Women Empowered / महिला सशक्त</p>
         </div>
 
         <div class="achievement">
-            <h3>500+</h3>
+            <h3 class="counter" data-target="500">0</h3>
             <p>Children Educated / विद्यार्थी शिक्षित</p>
         </div>
 
         <div class="achievement">
-            <h3>50+</h3>
+            <h3 class="counter" data-target="50">0</h3>
             <p>Health Camps / आरोग्य शिबिरे</p>
         </div>
+
     </div>
 </section>
     <!-- ================= FOOTER ================= -->
@@ -109,6 +111,29 @@
                 content.style.padding = "15px";
             }
         });
+    });
+</script>
+    <script>
+    const counters = document.querySelectorAll('.counter');
+
+    counters.forEach(counter => {
+        counter.innerText = '0';
+
+        const updateCounter = () => {
+            const target = +counter.getAttribute('data-target');
+            const current = +counter.innerText;
+
+            const increment = target / 100;
+
+            if (current < target) {
+                counter.innerText = Math.ceil(current + increment);
+                setTimeout(updateCounter, 20);
+            } else {
+                counter.innerText = target + "+";
+            }
+        };
+
+        updateCounter();
     });
 </script>
 </body>
