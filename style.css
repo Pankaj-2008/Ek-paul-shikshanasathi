@@ -239,3 +239,44 @@ nav a {
     font-size: 28px;
     color: #5cb85c;
 }
+/* ================= ACCORDION TEAM ================= */
+
+.accordion {
+    max-width: 700px;
+    margin: 40px auto;
+}
+
+.accordion-item {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.accordion-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.accordion-btn:hover {
+    background: #4cae4c;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    background: #f4f4f4;
+    padding: 0 15px;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.accordion-content p {
+    margin: 15px 0;
+}
