@@ -359,3 +359,29 @@ nav a {
     }
 
 }
+body {
+    background-color: #f4f8f4;
+}
+
+.info {
+    padding: 100px;
+    text-align: center;
+    background: white;
+}
+
+.info h2 {
+    font-size: 40px;
+    color: #5cb85c;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+}
