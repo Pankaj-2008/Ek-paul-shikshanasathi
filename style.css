@@ -280,108 +280,89 @@ nav a {
 .accordion-content p {
     margin: 15px 0;
 }
-/* ================= ABOUT PAGE DESIGN UPGRADE ================= */
+/* HERO */
 
-.about-section,
-.info,
-.content {
+.about-hero-new {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('images/about.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-text h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+/* STORY SECTIONS */
+
+.story-section {
     padding: 100px 120px;
 }
 
-.about-section h2,
-.info h2 {
-    font-size: 36px;
-    margin-bottom: 25px;
-    position: relative;
+.story-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
 }
 
-.about-section h2::after,
-.info h2::after {
-    content: "";
-    width: 60px;
-    height: 3px;
-    background: #5cb85c;
-    display: block;
-    margin: 10px auto 0;
-}
-
-.about-section p,
-.info p {
-    max-width: 850px;
-    margin: auto;
-    line-height: 1.8;
-    font-size: 18px;
-    color: #555;
-}
-
-/* ================= CARD DESIGN UPGRADE ================= */
-
-.card {
-    background: white;
-    padding: 35px;
+.story-image img {
+    width: 450px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    transition: 0.4s ease;
 }
 
-.card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+.story-text {
+    max-width: 500px;
 }
 
-.card h3 {
-    color: #5cb85c;
-    margin-bottom: 15px;
+.story-text h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #2e7d32;
 }
 
-/* ================= BACKGROUND SOFT LOOK ================= */
-
-.about-section {
-    background: linear-gradient(to right, #f9f9f9, #ffffff);
+.reverse .story-container {
+    flex-direction: row-reverse;
 }
 
-.info {
-    background: #ffffff;
+/* IMPACT SECTION */
+
+.impact-section {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 80px;
+    background: #2e7d32;
+    color: white;
+    flex-wrap: wrap;
 }
 
-.content {
-    background: #f4f8f4;
+.impact-box {
+    text-align: center;
 }
 
-/* ================= RESPONSIVE FIX ================= */
+.impact-box h3 {
+    font-size: 40px;
+}
 
-@media (max-width: 768px) {
+/* MOBILE */
 
-    .about-section,
-    .info,
-    .content {
-        padding: 60px 25px;
+@media(max-width: 768px){
+    .story-container{
+        flex-direction: column;
+        text-align: center;
     }
 
-}
-body {
-    background-color: #f4f8f4;
-}
+    .reverse .story-container{
+        flex-direction: column;
+    }
 
-.info {
-    padding: 100px;
-    text-align: center;
-    background: white;
-}
-
-.info h2 {
-    font-size: 40px;
-    color: #5cb85c;
-}
-
-.card {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-15px);
+    .story-image img{
+        width: 100%;
+    }
 }
