@@ -585,3 +585,87 @@ padding:20px;
 
 </body>
 </html>
+/* OUR WORK HEADER */
+
+.work-header{
+background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url(images/work-bg.jpg);
+background-size:cover;
+background-position:center;
+color:white;
+text-align:center;
+padding:100px 20px;
+}
+
+.work-header h1{
+font-size:45px;
+margin-bottom:10px;
+}
+
+.work-header p{
+font-size:18px;
+opacity:0.9;
+}
+
+
+
+/* WORK SECTION */
+
+.work-section{
+padding:80px 8%;
+background:#f4f4f4;
+}
+
+
+
+/* GRID LAYOUT */
+
+.work-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+
+
+/* WORK CARD */
+
+.work-card{
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+transition:0.4s;
+}
+
+.work-card:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
+
+
+
+/* CARD IMAGE */
+
+.work-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+
+
+/* CARD TEXT */
+
+.work-card h3{
+font-size:22px;
+padding:18px 20px 5px;
+color:#222;
+}
+
+.work-card p{
+font-size:15px;
+line-height:1.6;
+padding:0 20px 20px;
+color:#555;
+}
