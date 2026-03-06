@@ -497,3 +497,91 @@ color:white;
 text-align:center;
 padding:20px;
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Work | यशस्वी फाउंडेशन</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<div class="logo">यशस्वी फाउंडेशन</div>
+
+<nav>
+<ul class="nav-list">
+<li><a href="index.html">HOME</a></li>
+<li><a href="about.html">ABOUT US</a></li>
+<li><a href="our-work.html">OUR WORK</a></li>
+<li><a href="campaigns.html">CAMPAIGNS</a></li>
+<li><a href="get-involved.html">GET INVOLVED</a></li>
+<li><a href="contact.html">CONTACT</a></li>
+</ul>
+</nav>
+</header>
+
+
+<!-- PAGE HEADER -->
+
+<section class="work-header">
+<h1>Our Work / आमचे काम</h1>
+<p>समाजातील बदलासाठी आमचे विविध उपक्रम</p>
+</section>
+
+
+<!-- WORK CARDS -->
+
+<section class="work-section">
+
+<div class="work-container">
+
+<div class="work-card">
+<img src="images/education.jpg">
+<h3>Education Support</h3>
+<p>
+गरीब विद्यार्थ्यांना शिक्षणासाठी मदत,
+शैक्षणिक साहित्य आणि मार्गदर्शन.
+</p>
+</div>
+
+<div class="work-card">
+<img src="images/women.jpg">
+<h3>Women Empowerment</h3>
+<p>
+महिलांसाठी कौशल्य विकास कार्यक्रम
+आणि आर्थिक स्वावलंबनासाठी मदत.
+</p>
+</div>
+
+<div class="work-card">
+<img src="images/health.jpg">
+<h3>Health Camps</h3>
+<p>
+ग्रामीण भागात आरोग्य शिबिरे,
+वैद्यकीय तपासणी आणि औषध वितरण.
+</p>
+</div>
+
+<div class="work-card">
+<img src="images/community.jpg">
+<h3>Community Development</h3>
+<p>
+समाजातील लोकांसाठी विकास कार्यक्रम
+आणि सामाजिक जागरूकता उपक्रम.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+<p>© 2026 यशस्वी फाउंडेशन</p>
+</footer>
+
+</body>
+</html>
