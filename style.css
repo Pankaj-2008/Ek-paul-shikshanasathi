@@ -539,7 +539,7 @@ padding:20px;
 <div class="work-container">
 
 <div class="work-card">
-<img src="images/education.jpg">
+<img src="education.jpg">
 <h3>Education Support</h3>
 <p>
 गरीब विद्यार्थ्यांना शिक्षणासाठी मदत,
@@ -548,7 +548,7 @@ padding:20px;
 </div>
 
 <div class="work-card">
-<img src="images/women.jpg">
+<img src="women.jpg">
 <h3>Women Empowerment</h3>
 <p>
 महिलांसाठी कौशल्य विकास कार्यक्रम
@@ -557,7 +557,7 @@ padding:20px;
 </div>
 
 <div class="work-card">
-<img src="images/health.jpg">
+<img src="health.jpg">
 <h3>Health Camps</h3>
 <p>
 ग्रामीण भागात आरोग्य शिबिरे,
@@ -566,7 +566,7 @@ padding:20px;
 </div>
 
 <div class="work-card">
-<img src="images/community.jpg">
+<img src="community.jpg">
 <h3>Community Development</h3>
 <p>
 समाजातील लोकांसाठी विकास कार्यक्रम
@@ -589,7 +589,7 @@ padding:20px;
 
 .work-header{
 background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-url(images/work-bg.jpg);
+url(work-bg.jpg);
 background-size:cover;
 background-position:center;
 color:white;
