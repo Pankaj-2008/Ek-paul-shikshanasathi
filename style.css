@@ -285,7 +285,7 @@ nav a {
 .about-hero-new {
     height: 90vh;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                url('images/about.jpg') center/cover no-repeat;
+                url('about.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -365,4 +365,135 @@ nav a {
     .story-image img{
         width: 100%;
     }
+}
+/* HERO SECTION */
+
+.about-hero-new{
+height:60vh;
+background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+url("about-banner.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+.hero-text h1{
+font-size:50px;
+margin-bottom:15px;
+}
+
+.hero-text p{
+font-size:20px;
+}
+
+/* ABOUT SECTION */
+
+.about-section{
+padding:60px 10%;
+background:#f9f9f9;
+}
+
+.about-container h2{
+margin-top:30px;
+font-size:28px;
+color:#222;
+}
+
+.about-container p{
+margin-top:10px;
+line-height:1.7;
+font-size:16px;
+}
+
+/* STORY SECTION */
+
+.story-section{
+padding:70px 10%;
+background:white;
+}
+
+.story-container{
+display:flex;
+align-items:center;
+gap:50px;
+}
+
+.story-image img{
+width:100%;
+border-radius:10px;
+}
+
+.story-image{
+flex:1;
+}
+
+.story-text{
+flex:1;
+}
+
+.story-text h2{
+font-size:30px;
+margin-bottom:15px;
+}
+
+.story-text p{
+line-height:1.7;
+font-size:17px;
+}
+
+.reverse .story-container{
+flex-direction:row-reverse;
+}
+
+/* ACHIEVEMENTS */
+
+.achievements{
+background:#0a3d62;
+color:white;
+padding:70px 10%;
+text-align:center;
+}
+
+.achievements h2{
+font-size:35px;
+margin-bottom:40px;
+}
+
+.achievement-boxes{
+display:flex;
+justify-content:center;
+gap:50px;
+flex-wrap:wrap;
+}
+
+.achievement{
+background:white;
+color:#333;
+padding:30px;
+border-radius:10px;
+width:220px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.achievement h3{
+font-size:40px;
+color:#e74c3c;
+}
+
+.achievement p{
+margin-top:10px;
+font-size:16px;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:20px;
 }
