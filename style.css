@@ -370,7 +370,7 @@ nav a {
 
 .about-hero-new{
 height:60vh;
-background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+background:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),
 url("about-banner.jpg");
 background-size:cover;
 background-position:center;
