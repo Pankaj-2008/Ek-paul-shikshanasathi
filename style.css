@@ -782,3 +782,57 @@ color:inherit;
 .card-link .card{
 cursor:pointer;
 }
+/* SURVEY PAGE */
+
+.survey-header{
+background:#2f9e44;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+.survey-container{
+display:flex;
+justify-content:center;
+padding:40px;
+}
+
+#surveyForm{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+width:400px;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+#surveyForm input,
+#surveyForm select,
+#surveyForm textarea{
+padding:10px;
+border:1px solid #ddd;
+border-radius:6px;
+font-size:14px;
+}
+
+#surveyForm textarea{
+resize:none;
+height:80px;
+}
+
+#surveyForm button{
+background:#2f9e44;
+color:white;
+border:none;
+padding:12px;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+transition:0.3s;
+}
+
+#surveyForm button:hover{
+background:#22863a;
+}
