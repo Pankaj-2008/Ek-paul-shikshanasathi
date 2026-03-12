@@ -4,7 +4,67 @@
 <meta charset="UTF-8">
 <title>Survey | Yashasvi Foundation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f6f8;
+margin:0;
+}
+
+.survey-header{
+background:#2f9e44;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+.survey-container{
+display:flex;
+justify-content:center;
+padding:40px;
+}
+
+form{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+width:400px;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+input,select,textarea{
+padding:10px;
+border:1px solid #ddd;
+border-radius:6px;
+font-size:14px;
+}
+
+textarea{
+height:80px;
+resize:none;
+}
+
+button{
+background:#2f9e44;
+color:white;
+border:none;
+padding:12px;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#22863a;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -19,11 +79,13 @@
 <form id="surveyForm">
 
 <label>Select Type</label>
+
 <select name="type" id="typeSelect" required>
 <option value="">Select</option>
 <option value="student">Student</option>
 <option value="people">People</option>
 </select>
+
 
 <div id="studentFields">
 
@@ -34,7 +96,7 @@
 <input type="number" name="age" placeholder="Age">
 
 <select name="disability">
-<option value="">Select Disability</option>
+<option value="">Disability</option>
 <option>None</option>
 <option>Physical</option>
 <option>Hearing</option>
@@ -50,6 +112,7 @@
 
 </div>
 
+
 <div id="peopleFields">
 
 <input type="text" name="pname" placeholder="Name">
@@ -59,7 +122,7 @@
 <input type="number" name="page" placeholder="Age">
 
 <select name="pdisability">
-<option value="">Select Disability</option>
+<option value="">Disability</option>
 <option>None</option>
 <option>Physical</option>
 <option>Hearing</option>
@@ -76,31 +139,46 @@
 
 </div>
 
+
 <script>
 
 const scriptURL="https://script.google.com/macros/s/AKfycbx2iByCMIMRfUOf8VkV1O8cgMXRWq_uj5ngxz1sSvdtxV60HXo7Gow795FAc9nMOH6e/exec";
 
-document.getElementById("surveyForm").addEventListener("submit",function(e){
+const form=document.getElementById("surveyForm");
+
+form.addEventListener("submit",function(e){
 
 e.preventDefault();
 
-const formData=new FormData(this);
-const data=Object.fromEntries(formData.entries());
+const formData=new FormData(form);
 
 fetch(scriptURL,{
 method:"POST",
-body:JSON.stringify(data)
+body:formData
 })
-.then(res=>{
+.then(response=>response.text())
+.then(data=>{
+
 alert("Survey Submitted Successfully");
+
 window.location.href="index.html";
+
+})
+.catch(error=>{
+
+alert("Error submitting survey");
+
+console.log(error);
+
 });
 
 });
+
 
 const typeSelect=document.getElementById("typeSelect");
 
 const studentFields=document.getElementById("studentFields");
+
 const peopleFields=document.getElementById("peopleFields");
 
 studentFields.style.display="none";
@@ -109,13 +187,17 @@ peopleFields.style.display="none";
 typeSelect.addEventListener("change",function(){
 
 if(this.value==="student"){
+
 studentFields.style.display="block";
 peopleFields.style.display="none";
+
 }
 
 else if(this.value==="people"){
+
 peopleFields.style.display="block";
 studentFields.style.display="none";
+
 }
 
 });
