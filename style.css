@@ -669,3 +669,119 @@ line-height:1.6;
 padding:0 20px 20px;
 color:#555;
 }
+/* ================= CAMPAIGN HEADER ================= */
+
+.campaign-header{
+    text-align:center;
+    padding:80px 20px;
+    background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("images/campaign-bg.jpg");
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.campaign-header h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.campaign-header p{
+    font-size:18px;
+    opacity:0.9;
+}
+
+
+/* ================= CAMPAIGN SECTION ================= */
+
+.campaign-section{
+    padding:80px 8%;
+    background:#f7f7f7;
+}
+
+
+/* GRID */
+
+.campaign-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:35px;
+}
+
+
+/* ================= CARD ================= */
+
+.campaign-card{
+    background:white;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.campaign-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 18px 35px rgba(0,0,0,0.15);
+}
+
+
+/* IMAGE */
+
+.campaign-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+
+/* CONTENT */
+
+.campaign-content{
+    padding:20px;
+}
+
+.campaign-content h3{
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.campaign-content p{
+    font-size:15px;
+    color:#555;
+    line-height:1.6;
+}
+
+
+/* ================= PROGRESS BAR ================= */
+
+.progress-bar{
+    height:8px;
+    background:#eee;
+    border-radius:5px;
+    margin:15px 0;
+}
+
+.progress{
+    height:8px;
+    background:#5cb85c;
+    border-radius:5px;
+}
+
+
+/* ================= BUTTON ================= */
+
+.donate-btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:10px 20px;
+    background:#5cb85c;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.donate-btn:hover{
+    background:#4cae4c;
+}
