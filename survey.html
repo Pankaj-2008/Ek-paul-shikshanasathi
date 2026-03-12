@@ -133,20 +133,17 @@ margin-top:30px;
 </select>
 
 <label>Age *</label>
-<input type="number" name="age" required>
 
+<select name="age" id="ageSelect" required>
+<option value="">Select Age</option>
+</select>
+  
 <label>Which skill student have ? *</label>
 <input type="text" name="skills" required>
 
-<label>Disability *</label>
+<label id="dtypeLabel" style="display:none;">Type of Disability</label>
 
-<div class="radio-group">
-<label><input type="radio" name="disability" value="Yes"> Yes</label>
-<label><input type="radio" name="disability" value="No"> No</label>
-</div>
-
-<label>Type of Disability *</label>
-<input type="text" name="disabilityType">
+<input type="text" name="disabilityType" id="dtype" style="display:none;">
 
 <label>Contact</label>
 <input type="text" name="contact">
@@ -164,27 +161,82 @@ margin-top:30px;
 
 const scriptURL="https://script.google.com/macros/s/AKfycbzFtx1H2v40UGxTpKZSoaNdKlQZmzbjzNuYZzwXtz_Zwa3iPqkAqyKAuDAssRTVjjgv/exec";
 
-document.getElementById("surveyForm").addEventListener("submit",function(e){
+const form=document.getElementById("surveyForm");
+
+form.addEventListener("submit",function(e){
 
 e.preventDefault();
 
-const formData=new FormData(this);
+const formData=new FormData(form);
 
 fetch(scriptURL,{
 method:"POST",
 body:formData
 })
 .then(response=>{
-alert("Survey Submitted Successfully");
-document.getElementById("surveyForm").reset();
+
+alert("Survey Submitted Successfully ✅");
+
+window.location.href="index.html";
+
 })
 .catch(error=>{
+
 alert("Error submitting survey");
+
+});
+
+});
+
+
+// Disability logic
+
+const disRadios=document.getElementsByName("disability");
+
+const dtype=document.getElementById("dtype");
+const dtypeLabel=document.getElementById("dtypeLabel");
+
+disRadios.forEach(radio=>{
+
+radio.addEventListener("change",function(){
+
+if(this.value==="Yes"){
+
+dtype.style.display="block";
+dtypeLabel.style.display="block";
+
+}
+else{
+
+dtype.style.display="none";
+dtypeLabel.style.display="none";
+
+}
+
 });
 
 });
 
 </script>
 
+  <script>
+
+// Age dropdown 5 ते 100
+
+const ageSelect=document.getElementById("ageSelect");
+
+for(let i=5;i<=100;i++){
+
+let option=document.createElement("option");
+
+option.value=i;
+option.text=i;
+
+ageSelect.appendChild(option);
+
+}
+
+</script>
+  
 </body>
 </html>
