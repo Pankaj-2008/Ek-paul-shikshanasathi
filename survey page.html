@@ -25,27 +25,42 @@
 
 </form>
 
+
 <script>
 
 const scriptURL = "https://script.google.com/macros/s/AKfycbx2iByCMIMRfUOf8VkV1O8cgMXRWq_uj5ngxz1sSvdtxV60HXo7Gow795FAc9nMOH6e/exec";
 
-document.getElementById("surveyForm").addEventListener("submit", function(e){
+const form = document.getElementById("surveyForm");
+
+form.addEventListener("submit", function(e){
 
 e.preventDefault();
 
-const formData = new FormData(this);
-
+const formData = new FormData(form);
 const data = Object.fromEntries(formData.entries());
 
 fetch(scriptURL,{
 method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
 body:JSON.stringify(data)
 })
-.then(res => {
+
+.then(response => response.text())
+.then(result => {
 
 alert("Survey Submitted Successfully");
 
 window.location.href="index.html";
+
+})
+
+.catch(error => {
+
+alert("Error submitting survey");
+
+console.error(error);
 
 });
 
