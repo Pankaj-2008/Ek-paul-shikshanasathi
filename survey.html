@@ -1,69 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Survey | Yashasvi Foundation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="survey-header">
+<h1>Information Survey</h1>
+<p>Students आणि नागरिकांची माहिती गोळा करण्यासाठी फॉर्म</p>
+</header>
+
+<div class="survey-container">
+
 <form id="surveyForm">
 
-<select name="type">
+<label>Select Type</label>
+<select name="type" id="typeSelect" required>
+<option value="">Select</option>
 <option value="student">Student</option>
 <option value="people">People</option>
 </select>
 
-<input type="text" name="name" placeholder="Name">
+<div id="studentFields">
+
+<input type="text" name="name" placeholder="Student Name">
 
 <input type="text" name="class" placeholder="Class">
 
 <input type="number" name="age" placeholder="Age">
 
-<input type="text" name="disability" placeholder="Disability">
+<select name="disability">
+<option value="">Select Disability</option>
+<option>None</option>
+<option>Physical</option>
+<option>Hearing</option>
+<option>Vision</option>
+<option>Learning</option>
+</select>
 
-<input type="text" name="contact" placeholder="Contact">
-
-<input type="text" name="address" placeholder="Address">
+<input type="text" name="contact" placeholder="Contact Number">
 
 <textarea name="reason" placeholder="Reason if not attending school"></textarea>
 
 <textarea name="skills" placeholder="Skills"></textarea>
 
-<button type="submit">Submit</button>
+</div>
+
+<div id="peopleFields">
+
+<input type="text" name="pname" placeholder="Name">
+
+<input type="text" name="address" placeholder="Address">
+
+<input type="number" name="page" placeholder="Age">
+
+<select name="pdisability">
+<option value="">Select Disability</option>
+<option>None</option>
+<option>Physical</option>
+<option>Hearing</option>
+<option>Vision</option>
+</select>
+
+<input type="text" name="pcontact" placeholder="Contact Number">
+
+</div>
+
+<button type="submit">Submit Survey</button>
 
 </form>
 
+</div>
 
 <script>
 
-const scriptURL = "https://script.google.com/macros/s/AKfycbx2iByCMIMRfUOf8VkV1O8cgMXRWq_uj5ngxz1sSvdtxV60HXo7Gow795FAc9nMOH6e/exec";
+const scriptURL="https://script.google.com/macros/s/AKfycbx2iByCMIMRfUOf8VkV1O8cgMXRWq_uj5ngxz1sSvdtxV60HXo7Gow795FAc9nMOH6e/exec";
 
-const form = document.getElementById("surveyForm");
-
-form.addEventListener("submit", function(e){
+document.getElementById("surveyForm").addEventListener("submit",function(e){
 
 e.preventDefault();
 
-const formData = new FormData(form);
-const data = Object.fromEntries(formData.entries());
+const formData=new FormData(this);
+const data=Object.fromEntries(formData.entries());
 
 fetch(scriptURL,{
 method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
 body:JSON.stringify(data)
 })
-
-.then(response => response.text())
-.then(result => {
-
+.then(res=>{
 alert("Survey Submitted Successfully");
-
 window.location.href="index.html";
-
-})
-
-.catch(error => {
-
-alert("Error submitting survey");
-
-console.error(error);
+});
 
 });
+
+const typeSelect=document.getElementById("typeSelect");
+
+const studentFields=document.getElementById("studentFields");
+const peopleFields=document.getElementById("peopleFields");
+
+studentFields.style.display="none";
+peopleFields.style.display="none";
+
+typeSelect.addEventListener("change",function(){
+
+if(this.value==="student"){
+studentFields.style.display="block";
+peopleFields.style.display="none";
+}
+
+else if(this.value==="people"){
+peopleFields.style.display="block";
+studentFields.style.display="none";
+}
 
 });
 
 </script>
+
+</body>
+</html>
