@@ -141,10 +141,30 @@ margin-top:30px;
 <label>Which skill student have ? *</label>
 <input type="text" name="skills" required>
 
+<label>Disability *</label>
+
+<div class="radio-group">
+<label><input type="radio" name="disability" value="Yes" required> Yes</label>
+<label><input type="radio" name="disability" value="No"> No</label>
+</div>
+
 <label id="dtypeLabel" style="display:none;">Type of Disability</label>
 
-<input type="text" name="disabilityType" id="dtype" style="display:none;">
+<select name="disabilityType" id="dtype" style="display:none;">
 
+<option value="">Select Disability Type</option>
+<option>Physical Disability</option>
+<option>Visual Impairment</option>
+<option>Hearing Impairment</option>
+<option>Speech Disability</option>
+<option>Learning Disability</option>
+<option>Intellectual Disability</option>
+<option>Autism</option>
+<option>Multiple Disability</option>
+<option>Other</option>
+
+</select>
+  
 <label>Contact</label>
 <input type="text" name="contact">
 
