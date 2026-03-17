@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Volunteer | यशस्वी फाउंडेशन</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="survey-header">
+<h1>Volunteer Registration</h1>
+<p>स्वयंसेवक म्हणून सहभागी व्हा</p>
+</header>
+
+<div class="survey-container">
+
+<form id="volunteerForm">
+
+<input type="text" name="name" placeholder="Full Name" required>
+
+<input type="number" name="age" placeholder="Age (15-60)" required>
+
+<input type="text" name="city" placeholder="City / Village" required>
+
+<input type="text" name="skills" placeholder="Skills (Teaching, Social Work, etc.)" required>
+
+<input type="text" name="availability" placeholder="Available Days (Weekend / Daily)" required>
+
+<input type="text" name="contact" placeholder="Contact Number" required>
+
+<textarea name="message" placeholder="Why do you want to join?"></textarea>
+
+<button type="submit">Submit</button>
+
+</form>
+
+</div>
+
+<script>
+
+const scriptURL="https://script.google.com/macros/s/AKfycbyzh1fx4zpXE2-sfJtUiTKe4PqKuXL448zME7tJmQpTlKIb1EzSelsecS9l5YfOyCHf/exec";
+
+document.getElementById("volunteerForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const formData=new FormData(this);
+const data=Object.fromEntries(formData.entries());
+
+fetch(scriptURL,{
+method:"POST",
+body:JSON.stringify(data)
+})
+.then(res=>{
+alert("Thank you! We will contact you soon.");
+window.location.href="index.html";
+});
+
+});
+
+</script>
+
+</body>
+</html>
