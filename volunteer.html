@@ -16,51 +16,60 @@
 
 <div class="survey-container">
 
-<form id="volunteerForm">
+<form id="volunteerForm" class="pro-form">
 
-<input type="text" name="name" placeholder="Full Name" required>
+<h2>Join As Volunteer</h2>
 
-<input type="number" name="age" placeholder="Age (15-60)" required>
+<div class="form-group">
+<label>Full Name *</label>
+<input type="text" name="name" required>
+</div>
 
-<input type="text" name="city" placeholder="City / Village" required>
+<div class="form-group">
+<label>Age *</label>
+<select name="age" required>
+<option value="">Select Age</option>
+<!-- 15 to 60 -->
+<script>
+for(let i=15;i<=60;i++){
+document.write(`<option>${i}</option>`);
+}
+</script>
+</select>
+</div>
 
-<input type="text" name="skills" placeholder="Skills (Teaching, Social Work, etc.)" required>
+<div class="form-group">
+<label>City / Village *</label>
+<input type="text" name="city" required>
+</div>
 
-<input type="text" name="availability" placeholder="Available Days (Weekend / Daily)" required>
+<div class="form-group">
+<label>Skills *</label>
+<input type="text" name="skills" placeholder="Teaching, Social Work..." required>
+</div>
 
-<input type="text" name="contact" placeholder="Contact Number" required>
+<div class="form-group">
+<label>Availability *</label>
+<select name="availability" required>
+<option value="">Select</option>
+<option>Weekend</option>
+<option>Daily</option>
+<option>Flexible</option>
+</select>
+</div>
 
-<textarea name="message" placeholder="Why do you want to join?"></textarea>
+<div class="form-group">
+<label>Contact Number *</label>
+<input type="text" name="contact" required>
+</div>
 
-<button type="submit">Submit</button>
+<div class="form-group">
+<label>Why do you want to join?</label>
+<textarea name="message"></textarea>
+</div>
+
+<button type="submit" class="submit-btn">Submit Application</button>
 
 </form>
 
 </div>
-
-<script>
-
-const scriptURL="https://script.google.com/macros/s/AKfycbyzh1fx4zpXE2-sfJtUiTKe4PqKuXL448zME7tJmQpTlKIb1EzSelsecS9l5YfOyCHf/exec";
-
-document.getElementById("volunteerForm").addEventListener("submit",function(e){
-
-e.preventDefault();
-
-const formData=new FormData(this);
-const data=Object.fromEntries(formData.entries());
-
-fetch(scriptURL,{
-method:"POST",
-body:JSON.stringify(data)
-})
-.then(res=>{
-alert("Thank you! We will contact you soon.");
-window.location.href="index.html";
-});
-
-});
-
-</script>
-
-</body>
-</html>
