@@ -2,123 +2,36 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>olunteer | यशस्वी फाउंडेशन</title>
+<title>Volunteer | यशस्वी फाउंडेशन</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-
 <style>
-
-body{
-background:#f1f3f4;
-font-family:'Noto Sans Devanagari',sans-serif;
-}
-
-.survey-box{
-max-width:700px;
-margin:40px auto;
-background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-}
-
-.survey-title{
-font-size:26px;
-margin-bottom:10px;
-}
-
-.survey-desc{
-color:#555;
-margin-bottom:25px;
-}
-
-label{
-font-weight:600;
-display:block;
-margin-top:20px;
-margin-bottom:6px;
-}
-
-input,select,textarea{
-width:100%;
-padding:10px;
-border:1px solid #ccc;
-border-radius:6px;
-font-size:14px;
-}
-
-.radio-group{
-display:flex;
-gap:20px;
-margin-top:10px;
-}
-
-.submit-btn{
-margin-top:30px;
-background:#2f9e44;
-color:white;
-border:none;
-padding:12px;
-font-size:16px;
-border-radius:6px;
-cursor:pointer;
-width:100%;
-}
-
-.submit-btn:hover{
-background:#22863a;
-}
-
-.section{
-margin-top:30px;
-}
-
+body{background:#f1f3f4;font-family:'Noto Sans Devanagari',sans-serif;}
+.survey-box{max-width:700px;margin:40px auto;background:white;padding:30px;border-radius:10px;box-shadow:0 10px 25px rgba(0,0,0,0.1);}
+label{font-weight:600;display:block;margin-top:20px;margin-bottom:6px;}
+input,select,textarea{width:100%;padding:10px;border:1px solid #ccc;border-radius:6px;font-size:14px;}
+.submit-btn{margin-top:30px;background:#2f9e44;color:white;border:none;padding:12px;font-size:16px;border-radius:6px;cursor:pointer;width:100%;}
+.submit-btn:hover{background:#22863a;}
 </style>
-
 </head>
-
 <body>
 
-<header class="survey-header">
-<h1>Volunteer Registration</h1>
-<p>स्वयंसेवक म्हणून सहभागी व्हा</p>
-</header>
+<div class="survey-box">
+<h2>Volunteer Registration</h2>
 
-<div class="survey-container">
+<form id="volunteerForm">
 
-<form id="volunteerForm" class="pro-form">
-
-<h2>Join As Volunteer</h2>
-
-<div class="form-group">
 <label>Full Name *</label>
 <input type="text" name="name" required>
-</div>
 
-<div class="form-group"> 
-  <label>Age *</label>
-  <select name="age" required> 
-    <option value="">Select Age</option>
-    <!-- 15 to 60 -->
-<script>
-for(let i=15;i<=60;i++){
-document.write(`<option>${i}</option>`);
-}
-</script>
-</select>
-</div>
-  
-<div class="form-group">
+<label>Age *</label>
+<select name="age" id="ageSelect" required></select>
+
 <label>City / Village *</label>
 <input type="text" name="city" required>
-</div>
 
-<div class="form-group">
 <label>Skills *</label>
 <input type="text" name="skills" placeholder="Teaching, Social Work..." required>
-</div>
 
-<div class="form-group">
 <label>Availability *</label>
 <select name="availability" required>
 <option value="">Select</option>
@@ -126,37 +39,31 @@ document.write(`<option>${i}</option>`);
 <option>Daily</option>
 <option>Flexible</option>
 </select>
-</div>
 
-<div class="form-group">
 <label>Contact Number *</label>
 <input type="text" name="contact" required>
-</div>
 
-<div class="form-group">
 <label>Why do you want to join?</label>
 <textarea name="message"></textarea>
-</div>
 
 <button type="submit" class="submit-btn">Submit Application</button>
-
 </form>
-
 </div>
-  
 
 <script>
+// Age dropdown 15-60
+const ageSelect = document.getElementById("ageSelect");
+for(let i=15; i<=60; i++){
+  let option = document.createElement("option");
+  option.value = i;
+  option.text = i;
+  ageSelect.appendChild(option);
+}
 
-const scriptURL="https://script.google.com/macros/s/AKfycbwwLObp_H2X_WZ_74r1-3wa8CmFMO9m7ZaILnBWbMiROHI82XqcBVtq8BaHke_VJ1pXXg/exec";
-
-const form=document.getElementById("volunteerForm");
-
-form.addEventListener("submit",function(e){
-
-e.preventDefault();
+// Form submit
+const scriptURL = "https://script.google.com/macros/s/AKfycbz1yi8FIT7dHuOl0YEC0G4-Q9huFhcNNi17FgOez9fImt_xcpAX0bB6lJkHZZh7Ktg/exec; // /exec URL
 
 const form = document.getElementById("volunteerForm");
-
 form.addEventListener("submit", function(e){
   e.preventDefault();
   const formData = new FormData(form);
@@ -165,16 +72,17 @@ form.addEventListener("submit", function(e){
     method: "POST",
     body: formData
   })
-  .then(response => response.text())   // optional: check response
+  .then(response => response.text())
   .then(result => {
     alert("Survey Submitted Successfully ✅");
-    window.location.href="index.html";
+    window.location.href = "index.html";
   })
   .catch(error => {
     console.error(error);
     alert("Error submitting survey");
   });
 });
-  
+</script>
+
 </body>
 </html>
