@@ -147,7 +147,7 @@ document.write(`<option>${i}</option>`);
 
 <script>
 
-const scriptURL="https://script.google.com/macros/s/AKfycbwv-dpQI0oE3ETFegHdT2DYRQ_DnJV2tux3V1tTopfK64uef3q5nFyvaMxe1td_ns_dRw/exec";
+const scriptURL="https://script.google.com/macros/s/AKfycbwwLObp_H2X_WZ_74r1-3wa8CmFMO9m7ZaILnBWbMiROHI82XqcBVtq8BaHke_VJ1pXXg/exec";
 
 const form=document.getElementById("volunteerForm");
 
@@ -155,47 +155,26 @@ form.addEventListener("submit",function(e){
 
 e.preventDefault();
 
-const formData=new FormData(form);
+const form = document.getElementById("volunteerForm");
 
-fetch(scriptURL,{
-method:"POST",
-body:formData
-})
-.then(response=>{
+form.addEventListener("submit", function(e){
+  e.preventDefault();
+  const formData = new FormData(form);
 
-alert("Survey Submitted Successfully ✅");
-
-window.location.href="index.html";
-
-})
-.catch(error=>{
-
-alert("Error submitting survey");
-
+  fetch(scriptURL, {
+    method: "POST",
+    body: formData
+  })
+  .then(response => response.text())   // optional: check response
+  .then(result => {
+    alert("Survey Submitted Successfully ✅");
+    window.location.href="index.html";
+  })
+  .catch(error => {
+    console.error(error);
+    alert("Error submitting survey");
+  });
 });
-
-});
-
-</script>
-
-  <script>
-
-// Age dropdown 15 ते 60
-
-const ageSelect=document.getElementById("ageSelect");
-
-for(let i=15;i<=60;i++){
-
-let option=document.createElement("option");
-
-option.value=i;
-option.text=i;
-
-ageSelect.appendChild(option);
-
-}
-
-</script>
   
 </body>
 </html>
