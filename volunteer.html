@@ -72,8 +72,35 @@ document.write(`<option>${i}</option>`);
 
   <sript> 
   const scriptURL="https://script.google.com/macros/s/AKfycbyzh1fx4zpXE2-sfJtUiTKe4PqKuXL448zME7tJmQpTlKIb1EzSelsecS9l5YfOyCHf/exec";
-  
-  </sript>
+
+document.getElementById("volunteerForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const formData=new FormData(this);
+const data=Object.fromEntries(formData.entries());
+
+fetch(scriptURL,{
+method:"POST",
+body:JSON.stringify(data),
+headers:{
+"Content-Type":"application/json"
+}
+})
+.then(res=>res.text())
+.then(response=>{
+alert("Form Submitted Successfully ✅");
+window.location.href="index.html";
+})
+.catch(error=>{
+alert("Error submitting form ❌");
+console.error(error);
+});
+
+});
+
+</script>
+    
 </form>
 
 </div>
