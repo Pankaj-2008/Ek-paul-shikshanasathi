@@ -70,35 +70,34 @@ document.write(`<option>${i}</option>`);
 
 <button type="submit" class="submit-btn">Submit Application</button>
 
-  </form>
+ <script>
 
-</div>
+const scriptURL="https://script.google.com/macros/s/AKfycbw7r70X9LfNfTmQscZFVGBIBko0eiC5CRDX2dgrO1YXZjSuj7NyvkOthaa8-6Giho9Z/exec";
 
-<script>
-
-const scriptURL="https://script.google.com/macros/s/AKfycbw6dLMbpL-H1E2Yyut0FEFP6ShbdqAowLh6wLBjrSMVARxRBbX0uGsh4fbn1pcOqSCl/exec";
-
-document.getElementById("volunteerForm").addEventListener("submit",function(e){
+document.getElementById("volunteerForm").addEventListener("submit", function(e){
 
 e.preventDefault();
 
-const formData=new FormData(this);
-const data=Object.fromEntries(formData.entries());
+const formData = new FormData(this);
 
 fetch(scriptURL,{
 method:"POST",
-body:JSON.stringify(data),
-headers:{
-"Content-Type":"application/json"
+body: JSON.stringify(Object.fromEntries(formData)),
+headers: {
+"Content-Type": "application/json"
 }
 })
-.then(res=>res.text())
-.then(response=>{
+.then(response => response.json())
+.then(data => {
+if(data.result === "success"){
 alert("Form Submitted Successfully ✅");
-window.location.href="index.html";
-})
-.catch(error=>{
+window.location.href = "index.html";
+}else{
 alert("Error submitting form ❌");
+}
+})
+.catch(error => {
+alert("Network Error ❌");
 console.error(error);
 });
 
