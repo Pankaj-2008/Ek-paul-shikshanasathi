@@ -71,9 +71,9 @@ for(let i=15; i<=60; i++){
 }
 
 // Form submit
-const scriptURL = "https://script.google.com/macros/s/AKfycbz1yi8FIT7dHuOl0YEC0G4-Q9huFhcNNi17FgOez9fImt_xcpAX0bB6lJkHZZh7Ktg/exec; // /exec URL
-
+const scriptURL = "https://script.google.com/macros/s/AKfycbzzzJPrtr1x_DRtrq6O66yK2IXn6JNjpVzpPWE-SgFMkvnmH8FNHWPOfmmhQ1dpvA0V/exec"; // /exec URL नक्की टाका
 const form = document.getElementById("volunteerForm");
+
 form.addEventListener("submit", function(e){
   e.preventDefault();
   const formData = new FormData(form);
@@ -82,8 +82,9 @@ form.addEventListener("submit", function(e){
     method: "POST",
     body: formData
   })
-  .then(response => response.text())
+  .then(response => response.text())   // check response
   .then(result => {
+    console.log("Response from server:", result);
     alert("Survey Submitted Successfully ✅");
     window.location.href = "index.html";
   })
@@ -92,6 +93,7 @@ form.addEventListener("submit", function(e){
     alert("Error submitting survey");
   });
 });
+  
 </script>
 
 </body>
