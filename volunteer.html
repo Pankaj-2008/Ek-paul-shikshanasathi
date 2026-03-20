@@ -26,6 +26,16 @@ input,select,textarea{width:100%;padding:10px;border:1px solid #ccc;border-radiu
 <label>Age *</label>
 <select name="age" id="ageSelect" required></select>
 
+<script>
+// Age options 15 ते 60
+const ageSelect = document.getElementById("ageSelect");
+for (let i = 15; i <= 60; i++) {
+  let option = document.createElement("option");
+  option.value = i;
+  option.text = i;
+  ageSelect.appendChild(option);
+}
+</script>
 <label>City / Village *</label>
 <input type="text" name="city" required>
 
