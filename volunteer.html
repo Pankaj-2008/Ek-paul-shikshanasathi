@@ -27,14 +27,8 @@
 
 <div class="form-group">
 <label>Age *</label>
-<select name="age" required>
+<select name="age" id="ageSelect" required>
 <option value="">Select Age</option>
-<!-- 15 to 60 -->
-<script>
-for(let i=15;i<=60;i++){
-document.write(`<option>${i}</option>`);
-}
-</script>
 </select>
 </div>
 
@@ -70,10 +64,25 @@ document.write(`<option>${i}</option>`);
 
 <button type="submit" class="submit-btn">Submit Application</button>
 
- <script>
+</form>
 
+</div>
+
+<script>
+
+// Age dropdown (15–60)
+const ageSelect = document.getElementById("ageSelect");
+for(let i=15;i<=60;i++){
+let option = document.createElement("option");
+option.value = i;
+option.text = i;
+ageSelect.appendChild(option);
+}
+
+// GOOGLE SCRIPT URL
 const scriptURL="https://script.google.com/macros/s/AKfycbw7r70X9LfNfTmQscZFVGBIBko0eiC5CRDX2dgrO1YXZjSuj7NyvkOthaa8-6Giho9Z/exec";
 
+// FORM SUBMIT
 document.getElementById("volunteerForm").addEventListener("submit", function(e){
 
 e.preventDefault();
@@ -87,17 +96,13 @@ headers: {
 "Content-Type": "application/json"
 }
 })
-.then(response => response.json())
+.then(response => response.text())   // ✅ FIX
 .then(data => {
-if(data.result === "success"){
 alert("Form Submitted Successfully ✅");
 window.location.href = "index.html";
-}else{
-alert("Error submitting form ❌");
-}
 })
 .catch(error => {
-alert("Network Error ❌");
+alert("Error submitting form ❌");
 console.error(error);
 });
 
