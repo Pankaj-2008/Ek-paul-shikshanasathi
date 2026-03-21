@@ -61,48 +61,35 @@
 
 <script>
 
-const scriptURL = "https://script.google.com/macros/s/AKfycbyDfe4-ByfWpUWLs_2dm4KoL4r4ZEW1VUwvagU888j-1wnvnuwP7iH_w7icCdTgP-BZ/exec";
+<form action="https://script.google.com/macros/s/AKfycbzrj59oGycwWNmdDSZWSdz-yg22hpaKU1bYkZaaxbyTevjDr5bZZo_YWSex3-78AoCzxg/exec" method="POST" target="hidden_iframe" onsubmit="showMessage()">
 
-// convert file to base64
-function getBase64(file){
-return new Promise((resolve,reject)=>{
-const reader = new FileReader();
-reader.readAsDataURL(file);
-reader.onload = ()=>resolve(reader.result);
-reader.onerror = error => reject(error);
-});
+<h2>Make a Donation ❤️</h2>
+
+<label>Name *</label>
+<input type="text" name="name" required>
+
+<label>Amount *</label>
+<select name="amount" required>
+<option value="">Select Amount</option>
+<option>100</option>
+<option>200</option>
+<option>500</option>
+<option>1000</option>
+</select>
+
+<label>Contact *</label>
+<input type="text" name="contact" required>
+
+<button type="submit">Submit Donation</button>
+
+</form>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<script>
+function showMessage(){
+  alert("Donation Submitted ❤️");
 }
-
-document.getElementById("donateForm").addEventListener("submit", async function(e){
-
-e.preventDefault();
-
-const form = this;
-const file = document.getElementById("fileInput").files[0];
-
-const base64 = await getBase64(file);
-
-const formData = new FormData(form);
-const data = Object.fromEntries(formData.entries());
-
-data.file = base64;
-
-fetch(scriptURL,{
-method:"POST",
-body: JSON.stringify(data),
-headers: {"Content-Type":"application/json"}
-})
-.then(res=>res.text())
-.then(()=>{
-alert("Donation Submitted ❤️");
-window.location.href="index.html";
-})
-.catch(()=>{
-alert("Error ❌");
-});
-
-});
-
 </script>
 
 </body>
