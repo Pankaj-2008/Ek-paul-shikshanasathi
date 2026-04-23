@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pankaj-2008.github.io/Ek-paul-shikshanasathi/sitemap.xml
